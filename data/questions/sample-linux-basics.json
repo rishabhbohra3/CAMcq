@@ -1,0 +1,136 @@
+{
+  "title": "Linux Basics",
+  "description": "Foundational Linux command-line and system concepts",
+  "sections": [
+    {
+      "name": "File System",
+      "topics": [
+        {
+          "name": "Navigation",
+          "subtopics": [
+            {
+              "name": "Core Commands",
+              "questions": [
+                {
+                  "id": "linux-001",
+                  "question": "Which command lists files including hidden ones?",
+                  "options": ["ls", "ls -a", "ls -l", "dir"],
+                  "answer": 1,
+                  "explanation": "The -a flag includes entries starting with a dot (hidden files). Without it, ls skips them."
+                },
+                {
+                  "id": "linux-002",
+                  "question": "What does `pwd` print?",
+                  "options": ["Process working directory", "Print working directory (current path)", "Parent working directory", "Previous working directory"],
+                  "answer": 1,
+                  "explanation": "pwd stands for Print Working Directory — it outputs the absolute path of your current location."
+                },
+                {
+                  "id": "linux-003",
+                  "question": "Which command moves you to your home directory regardless of where you are?",
+                  "options": ["cd /", "cd ~", "cd home", "cd .."],
+                  "answer": 1,
+                  "explanation": "~ is a shell shorthand for $HOME. Running `cd` with no arguments also goes to $HOME."
+                }
+              ]
+            },
+            {
+              "name": "Paths",
+              "questions": [
+                {
+                  "id": "linux-004",
+                  "question": "What does a path starting with / indicate?",
+                  "options": ["Relative path", "Absolute path from root", "Home directory", "Hidden file"],
+                  "answer": 1,
+                  "explanation": "Paths beginning with / start from the filesystem root (top-level), making them absolute."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "File Operations",
+          "subtopics": [
+            {
+              "name": "Copy & Move",
+              "questions": [
+                {
+                  "id": "linux-005",
+                  "question": "Which command copies a directory recursively?",
+                  "options": ["cp dir/ dest/", "cp -r dir/ dest/", "mv dir/ dest/", "copy dir/ dest/"],
+                  "answer": 1,
+                  "explanation": "cp requires -r (recursive) to copy directories. Without it, cp only works on files."
+                },
+                {
+                  "id": "linux-006",
+                  "question": "What does `mv` do when source and destination are on the same filesystem?",
+                  "options": ["Copies then deletes", "Renames (no data moved)", "Creates a symlink", "Duplicates the inode"],
+                  "answer": 1,
+                  "explanation": "On the same filesystem mv is just a rename — it updates the directory entry without copying data, making it instant."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Processes",
+      "topics": [
+        {
+          "name": "Process Management",
+          "subtopics": [
+            {
+              "name": "Viewing Processes",
+              "questions": [
+                {
+                  "id": "linux-007",
+                  "question": "Which command shows a real-time dynamic view of running processes?",
+                  "options": ["ps", "top", "jobs", "lsof"],
+                  "answer": 1,
+                  "explanation": "top provides an interactive, auto-refreshing view. ps gives a static snapshot."
+                },
+                {
+                  "id": "linux-008",
+                  "question": "What signal does `kill -9` send?",
+                  "options": ["SIGTERM", "SIGKILL", "SIGHUP", "SIGSTOP"],
+                  "answer": 1,
+                  "explanation": "Signal 9 is SIGKILL — it cannot be caught or ignored by the process. Use SIGTERM (15) first for a graceful shutdown."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Permissions",
+      "topics": [
+        {
+          "name": "File Permissions",
+          "subtopics": [
+            {
+              "name": "chmod & chown",
+              "questions": [
+                {
+                  "id": "linux-009",
+                  "question": "What permission does `chmod 755` give to the owner?",
+                  "options": ["Read only", "Read and write", "Read, write, execute", "Execute only"],
+                  "answer": 2,
+                  "explanation": "7 in octal = rwx (4+2+1). The first digit is for the owner, so the owner gets full read/write/execute."
+                },
+                {
+                  "id": "linux-010",
+                  "question": "Which command changes the owner of a file?",
+                  "options": ["chmod", "chown", "chgrp", "usermod"],
+                  "answer": 1,
+                  "explanation": "chown changes the owning user (and optionally group) of a file. chgrp only changes the group."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "title": "Business Case Analysis",
+  "description": "Passage-based case studies to practice reading and decision-making",
+  "sections": [
+    {
+      "name": "Case Studies",
+      "topics": [
+        {
+          "name": "SaaS Strategy",
+          "subtopics": [
+            {
+              "name": "Pricing Decisions",
+              "passages": [
+                {
+                  "id": "p-pricing-001",
+                  "title": "Aurora Analytics — Pricing Pivot",
+                  "passage": "Aurora Analytics, a five-year-old SaaS company, serves mid-market e-commerce businesses with a real-time customer insights platform. For the past three years, the company has charged a flat $399/month per customer, regardless of usage. Revenue growth has been steady at 18% year-over-year, but two trends are concerning leadership:\n\nFirst, large customers — those processing millions of events monthly — are heavily discounted in negotiation, with the average enterprise deal closing at $240/month. These customers consume the most infrastructure and account for 68% of compute costs while contributing only 41% of revenue.\n\nSecond, smaller customers (under 50,000 events/month) churn at 4.2% monthly, citing the price as 'too high for what we use.' The CFO has proposed three alternatives: (a) a tiered plan with $99 / $399 / $899 buckets based on event volume, (b) pure usage-based pricing at $0.002 per event with a $49 minimum, or (c) a hybrid: $99 base plus $0.001 per event over 100,000.\n\nThe head of engineering warns that pure usage-based pricing would make revenue 'lumpy and hard to forecast,' while the head of sales worries that tiered plans will trigger price-anchoring negotiations on the top tier.",
+                  "questions": [
+                    {
+                      "id": "p-pricing-001-q1",
+                      "question": "Based on the passage, what is the primary financial risk of the current flat-rate model?",
+                      "options": [
+                        "Small customers are subsidizing the cost of large customers",
+                        "Large customers are unprofitable relative to the infrastructure they consume",
+                        "Pricing is too low to support the engineering team",
+                        "Customers cannot predict their monthly bill"
+                      ],
+                      "answer": 1,
+                      "explanation": "The passage states large customers contribute 41% of revenue but consume 68% of compute costs — a clear sign that they are a margin drag. Small customers churning is a separate, retention concern."
+                    },
+                    {
+                      "id": "p-pricing-001-q2",
+                      "question": "Which of the proposed options best addresses BOTH the enterprise margin issue and small-customer churn simultaneously?",
+                      "options": [
+                        "Tiered $99 / $399 / $899 buckets",
+                        "Pure usage at $0.002/event with $49 minimum",
+                        "Hybrid: $99 base + $0.001/event over 100,000",
+                        "Keep flat pricing but raise it to $599"
+                      ],
+                      "answer": 2,
+                      "explanation": "The hybrid model lowers the entry price (helps small-customer churn) and scales cost with usage (recoups margin from heavy users), without making revenue purely volatile. Pure usage-based would solve margin but worsen forecast volatility per the engineering head's concern."
+                    },
+                    {
+                      "id": "p-pricing-001-q3",
+                      "question": "The head of sales worries tiered plans will trigger 'price-anchoring' on the top tier. What does this concern mean?",
+                      "options": [
+                        "Customers will refuse to pay any price above the lowest tier",
+                        "Customers will use the top-tier price as a starting point to negotiate discounts down",
+                        "Sales reps will be forced to upsell aggressively",
+                        "The top tier will become the default expected price"
+                      ],
+                      "answer": 1,
+                      "explanation": "Price anchoring in sales negotiation refers to customers latching onto a visible high price and pushing down from it — exactly what the head of sales is warning about. Option D describes a different psychology effect."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Customer Retention",
+              "questions": [
+                {
+                  "id": "retention-q1",
+                  "question": "Which metric most directly measures product stickiness?",
+                  "options": ["MRR", "NPS", "DAU/MAU ratio", "Churn rate"],
+                  "answer": 2,
+                  "explanation": "DAU/MAU (daily over monthly active users) directly captures how frequently users return — the textbook 'stickiness' metric."
+                }
+              ],
+              "passages": [
+                {
+                  "id": "p-retention-001",
+                  "title": "Helix Health — Onboarding Crisis",
+                  "passage": "Helix Health, a telemedicine platform, recently discovered that 62% of new patient signups never complete their first consultation. Investigation revealed that the onboarding flow requires patients to: (1) verify their email, (2) upload a government ID, (3) connect their insurance, (4) fill a 32-field medical history form, and (5) schedule their first appointment.\n\nAnalytics show 41% of dropouts occur at step 4 (the medical history form). A junior PM proposes shortening the form to 8 fields. The head of clinical operations objects: 'We legally need that information before a doctor can consult.' The CTO counters: 'We can collect it later, just not at signup.'",
+                  "questions": [
+                    {
+                      "id": "p-retention-001-q1",
+                      "question": "What is the strongest argument for the CTO's proposal to defer the medical history form?",
+                      "options": [
+                        "It would reduce engineering load",
+                        "Information collected later — even right before the consult — still satisfies the legal requirement",
+                        "Patients don't actually need medical history for a telemedicine visit",
+                        "The junior PM has more product experience"
+                      ],
+                      "answer": 1,
+                      "explanation": "The clinical objection is about WHEN the info is collected, not whether. The CTO's point is that as long as it's gathered before the consult, the legal/clinical requirement is met — and moving it out of signup removes a 41% drop-off point."
+                    },
+                    {
+                      "id": "p-retention-001-q2",
+                      "question": "If Helix could only run one experiment first, which would yield the most signal about onboarding friction?",
+                      "options": [
+                        "A/B test the email verification copy",
+                        "Move the medical history form to immediately before the first consult",
+                        "Add a progress bar to all five steps",
+                        "Remove the government ID requirement entirely"
+                      ],
+                      "answer": 1,
+                      "explanation": "The 41% drop at step 4 is the largest single source of dropout. Moving it directly tests the deferral hypothesis. Other changes target much smaller potential gains."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
