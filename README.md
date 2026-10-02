@@ -206,6 +206,7 @@ CAMcq/
 - **Sections / Topics / Subtopics are all just labels** — name them however helps you study. The hierarchy is purely organizational.
 - **Explanations are optional** but worth writing — they're the main thing you'll read in Practice mode.
 - **For huge question banks**, split them across multiple JSON files. Each file becomes its own course on the dashboard.
+- **Generating with an LLM?** Use the ready-made prompt in [`prompts/dataset-generator.md`](prompts/dataset-generator.md) — fill in your topic details and it returns a file in this exact format.
 
 ---
 
